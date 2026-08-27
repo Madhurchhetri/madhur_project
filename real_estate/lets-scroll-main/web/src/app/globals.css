@@ -1,0 +1,60 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Let's Scroll Theme Override Variables (unlayered, will override engine defaults) */
+  --sw-bg: #131518;            /* Ultra-premium dark slate/charcoal */
+  --sw-ink: #F3EFE9;           /* Warm ivory/sand primary text */
+  --sw-ink-soft: #A0A5AD;      /* Soft grey secondary text */
+  --sw-accent: #C5A880;        /* Warm champagne gold / bronze accent */
+
+  --sw-font-display-custom: 'Playfair Display', serif;
+  --sw-font-body-custom: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--sw-bg);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--sw-bg);
+  color: var(--sw-ink);
+  font-family: var(--sw-font-body-custom), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom dark overlay layer behind the copy layer to ensure text contrast */
+.sw-copylayer::before {
+  background: linear-gradient(
+    90deg,
+    var(--sw-bg) 0%,
+    color-mix(in srgb, var(--sw-bg) 90%, transparent) 40%,
+    color-mix(in srgb, var(--sw-bg) 40%, transparent) 75%,
+    transparent 100%
+  ) !important;
+}
+
+@media (max-width: 860px) {
+  .sw-copylayer::before {
+    background: linear-gradient(
+      0deg,
+      var(--sw-bg) 10%,
+      color-mix(in srgb, var(--sw-bg) 85%, transparent) 55%,
+      transparent 100%
+    ) !important;
+  }
+}

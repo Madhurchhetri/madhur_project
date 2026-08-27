@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.checked{
+    text-decoration: line-through;
+}
+.notChecked{
+    text-decoration: none;
+}
+.todo-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: bisque;
+    height: 100vh;
+}
+.task-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.task-parent{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: yellow;
+}
+.task-parent p{
+    width: 60%;
+    margin: 10px 0;
+    border-bottom: 2px solid;
+}
+.task-parent span{
+    width: 20%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    padding: 10px 0;
+    background-color: blue;
+}
+.clear{
+    display: grid;
+    place-items: center;
+    padding: 10px 0;
+}
