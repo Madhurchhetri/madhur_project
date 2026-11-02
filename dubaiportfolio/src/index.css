@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+:root {
+  --pink: #FF006E;
+  --pink-dark: #CC0058;
+  --yellow: #FFE600;
+  --dark-bg: #0a0a0a;
+  --dark-card: #111111;
+  --dark-card-2: #1a1a1a;
+  --purple-dark: #1a0a1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #000000;
+  color: #111111;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Only enable cursor: none on desktop devices with hover & fine pointer */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+/* Custom cursor */
+.cursor {
+  width: 10px;
+  height: 10px;
+  background: var(--pink);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+.cursor-follower {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--pink);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+}
+
+@media (hover: none) or (pointer: coarse) {
+  .cursor,
+  .cursor-follower {
+    display: none !important;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border-radius: 3px;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-inner {
+  animation: marquee 25s linear infinite;
+  white-space: nowrap;
+  display: flex;
+  width: max-content;
+}
+
+.marquee-inner:hover {
+  animation-play-state: paused;
+}
+
+/* Pink highlight text */
+.text-pink {
+  color: var(--pink);
+}
+
+.bg-pink {
+  background-color: var(--pink);
+}
+
+/* Yellow highlight */
+.highlight-yellow {
+  background-color: var(--yellow);
+  color: #000000;
+  padding: 0 6px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* Gradients */
+.hero-gradient {
+  background: linear-gradient(135deg, #240033 0%, #150022 35%, #0d0018 70%, #05000a 100%);
+}
+
+.dark-purple-gradient {
+  background: linear-gradient(180deg, #150022 0%, #080010 100%);
+}
+
+/* Section transitions */
+.section-black {
+  background: #000000;
+  color: #ffffff;
+}
+
+.section-white {
+  background: #ffffff;
+  color: #111111;
+}
+
+/* Button styles */
+.btn-pink {
+  background: var(--pink);
+  color: white;
+  border-radius: 9999px;
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(255, 0, 110, 0.25);
+}
+
+.btn-pink:hover {
+  background: var(--pink-dark);
+  box-shadow: 0 6px 25px rgba(255, 0, 110, 0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9999px;
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #000;
+  border-color: white;
+}
+
+/* Navigation */
+.nav-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: var(--pink);
+}
+
+/* Pink tag badge */
+.tag-badge {
+  background: rgba(255, 0, 110, 0.12);
+  color: var(--pink);
+  border: 1px solid rgba(255, 0, 110, 0.25);
+  border-radius: 9999px;
+  padding: 4px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* Checkmark item */
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #d1d5db;
+}
+
+.check-icon {
+  color: var(--pink);
+  flex-shrink: 0;
+}
