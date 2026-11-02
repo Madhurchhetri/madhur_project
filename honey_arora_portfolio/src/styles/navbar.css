@@ -1,0 +1,133 @@
+.navbar {
+  width: 100%;
+  height: 82px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  background: rgba(8, 4, 8, 0.96);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* Bottom shadow */
+  box-shadow:
+  inset 0 -25px 25px -18px rgba(220, 0, 85, 0.9),
+    inset 0 -25px 35px -25px rgba(150, 0, 65, 0.8);
+  overflow: visible;
+  border-bottom: none;
+}
+
+/* Pink glow */
+/* .navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+
+  width: 100%;
+  height: 35px;
+
+  background: rgba(201, 0, 80, 0.35);
+
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: -1;
+} */
+
+.navbar-container {
+  width: 100%;
+  height: 100%;
+  padding: 0 2.7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand-logo img {
+  width: 180px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 2.7vw, 40px);
+}
+
+.desktop-nav a {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.desktop-nav a:hover {
+  color: #ed075b;
+}
+
+.contact-btn {
+  background: #c90050;
+  color: #fff;
+  padding: 15px 23px;
+
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #ed075b;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .desktop-nav,
+  .navbar-container > .contact-btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 5%;
+    background: #080408;
+  }
+
+  .mobile-nav a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 72px;
+  }
+
+  .brand-logo img {
+    width: 145px;
+  }
+}
