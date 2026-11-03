@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import gsap from "gsap";
@@ -32,7 +31,7 @@ const Hero = () => {
           opacity: 0,
           duration: 1.2,
         },
-        "-=0.7"
+        "-=0.7",
       );
 
       gsap.to(".hero-person", {
@@ -53,9 +52,7 @@ const Hero = () => {
   return (
     <section className="hero" id="home" ref={heroRef}>
       <div className="hero-container">
-
         <div className="hero-content">
-
           <motion.span
             className="hero-tag"
             initial={{ opacity: 0 }}
@@ -78,9 +75,8 @@ const Hero = () => {
           </h2>
 
           <p>
-            We build powerful digital experiences
-            that help brands stand out and connect
-            with the right audience.
+            We build powerful digital experiences that help brands stand out and
+            connect with the right audience.
           </p>
 
           <div className="hero-actions">
@@ -98,53 +94,49 @@ const Hero = () => {
             <span className="trust-star">★★★★★</span>
             <span>DESIGN · STRATEGY · INNOVATION</span>
           </div>
-
         </div>
 
         <div className="hero-visual">
-
-          <img
-            src="/hero-person.png"
+          <motion.img
+            src="https://static.berqwp.com/www.moritzdunkel.de/mw1920-q70-webp/https://www.moritzdunkel.de/wp-content/uploads/2026/05/bester-webdesigner-deutschland.webp"
             alt="Honey Arora"
             className="hero-person"
+            whileHover={{
+              scale: 0.92,
+              x: 35,
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
           />
 
-         <div className="hero-badge">
-  <div className="badge-inner">
-
-    <svg
-      viewBox="0 0 180 180"
-      className="badge-text-svg"
-    >
-      <defs>
-        <path
-          id="circle-text-path"
-          d="
+          <div className="hero-badge">
+            <div className="badge-inner">
+              <svg viewBox="0 0 180 180" className="badge-text-svg">
+                <defs>
+                  <path
+                    id="circle-text-path"
+                    d="
             M 90,90
             m -63,0
             a 63,63 0 1,1 126,0
             a 63,63 0 1,1 -126,0
           "
-        />
-      </defs>
+                  />
+                </defs>
 
-      <text>
-        <textPath
-          href="#circle-text-path"
-          startOffset="0%"
-        >
-          HONEY ARORA ✦ HONEY ARORA ✦
-        </textPath>
-      </text>
-    </svg>
+                <text>
+                  <textPath href="#circle-text-path" startOffset="0%">
+                    HONEY ARORA ✦ HONEY ARORA ✦
+                  </textPath>
+                </text>
+              </svg>
 
-    <strong></strong>
-
-  </div>
-</div>
-
+              <strong></strong>
+            </div>
+          </div>
         </div>
-
       </div>
     </section>
   );

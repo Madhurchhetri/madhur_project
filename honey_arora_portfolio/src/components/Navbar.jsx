@@ -5,10 +5,10 @@ import "../styles/navbar.css";
 
 const navLinks = [
   "Home",
-  "Services",
-  "References",
   "About",
-  "Resources",
+  "Services",
+  "Projects",
+  "Testimonial",
 ];
 
 const Navbar = () => {

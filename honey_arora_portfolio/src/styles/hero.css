@@ -145,11 +145,11 @@ box-shadow:
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero-person {
-  max-height: 88vh;
+  max-height: 99vh;
   max-width: 100%;
   width: auto;
   object-fit: contain;
@@ -157,7 +157,12 @@ box-shadow:
   position: relative;
   z-index: 1;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
+  transform-origin: center bottom;
+  cursor: pointer;
+  will-change: transform;
+  scale: 1.10;
 }
+
 
 .hero-badge {
   position: absolute;
