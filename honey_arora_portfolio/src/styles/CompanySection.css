@@ -1,0 +1,369 @@
+
+.company-section {
+  width: 100%;
+  position: relative;
+  background: #080408;
+  color: #fff;
+  /* overflow: clip; */
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   PAGE 1 - INTRO
+========================= */
+
+.company-intro {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  padding: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #080408;
+}
+
+.company-intro-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background-image: url("/company-cover.jpg");
+  background-size: cover;
+  background-position: center;
+
+  transform-origin: center center;
+  will-change: transform, border-radius;
+}
+
+.company-intro-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 4, 8, 0.85),
+      rgba(8, 4, 8, 0.3)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 4, 8, 0.7),
+      transparent
+    );
+}
+
+.company-intro-content {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 8%;
+
+  z-index: 2;
+}
+
+.company-intro-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 5px;
+
+  color: #ffd900;
+
+  margin-bottom: 30px;
+}
+
+.company-intro-content h1 {
+  font-size: clamp(50px, 8vw, 115px);
+  font-weight: 400;
+
+  line-height: 0.95;
+  letter-spacing: -5px;
+
+  margin-bottom: 25px;
+}
+
+.company-intro-content h1 strong {
+  font-weight: 900;
+  color: #c90050;
+}
+
+.company-intro-content p {
+  font-size: clamp(14px, 1.5vw, 20px);
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.company-scroll {
+  position: absolute;
+  bottom: 45px;
+  left: 8%;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================
+   PAGE 2 - COMPANY STORY
+========================= */
+
+.company-story {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  bottom: 0;
+
+  width: 100%;
+   height: 100vh;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    padding: 20px;
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(105, 0, 38, 0.3),
+      transparent 50%
+    ),
+    #080408;
+clip-path: circle(0px at 100% 0%);
+  will-change: clip-path;
+}
+
+.company-story-container {
+  width: 100%;
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  align-items: center;
+  gap: 90px;
+}
+
+/* LEFT IMAGE */
+
+.company-image {
+  position: relative;
+
+  width: 100%;
+  height: 620px;
+
+  overflow: hidden;
+
+  background: #1a1016;
+
+  will-change: transform, filter;
+}
+
+.company-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.7s ease;
+}
+
+.company-image:hover img {
+  transform: scale(1.04);
+}
+
+.company-image-caption {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.company-image-caption span:first-child {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.company-image-caption span:last-child {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #ffd900;
+}
+
+/* RIGHT CONTENT */
+
+.company-content {
+  position: relative;
+  max-width: 650px;
+}
+
+.company-label {
+  display: inline-block;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+
+  color: #e60062;
+
+  margin-bottom: 25px;
+}
+
+.company-content h2 {
+  font-size: clamp(45px, 5vw, 75px);
+  font-weight: 400;
+
+  line-height: 1.1;
+  letter-spacing: -3px;
+
+  margin-bottom: 30px;
+}
+
+.company-content h2 strong {
+  font-weight: 900;
+  color: #c90050;
+}
+
+.company-content p {
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.9;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  margin-bottom: 18px;
+}
+
+/* BUTTON */
+
+.company-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 35px;
+
+  padding: 17px 24px;
+  margin-top: 20px;
+
+  background: #c90050;
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+.company-button span {
+  font-size: 20px;
+}
+
+.company-button:hover {
+  background: #ffd900;
+  color: #080408;
+
+  transform: translateY(-4px);
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .company-story-container {
+    gap: 40px;
+  }
+
+  .company-image {
+    height: 520px;
+  }
+
+  .company-content h2 {
+    font-size: clamp(40px, 5vw, 60px);
+    letter-spacing: -2px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .company-intro {
+    padding: 15px;
+  }
+
+  .company-intro-content {
+    padding: 8%;
+  }
+
+  .company-intro-content h1 {
+    font-size: clamp(45px, 11vw, 75px);
+    letter-spacing: -3px;
+  }
+
+  .company-scroll {
+    left: 8%;
+    bottom: 30px;
+  }
+
+  .company-story {
+    padding: 90px 6%;
+  }
+
+  .company-story-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .company-image {
+    height: 480px;
+  }
+
+  .company-content h2 {
+    font-size: clamp(40px, 10vw, 65px);
+  }
+}
+
+@media (max-width: 480px) {
+  .company-image {
+    height: 400px;
+  }
+
+  .company-intro-content h1 {
+    font-size: 45px;
+  }
+
+  .company-content h2 {
+    font-size: 40px;
+  }
+}
