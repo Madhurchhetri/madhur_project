@@ -99,7 +99,7 @@ const WhatWeSell = () => {
   };
 
   return (
-    <section className="sell-section" id="what-we-sell">
+    <section className="sell-section" id="services">
 
       {/* BACKGROUND EFFECT */}
       <div className="sell-glow sell-glow-one" />
@@ -133,7 +133,7 @@ const WhatWeSell = () => {
             EXPLORE BY DEVELOPER
           </div>
 
-          <div className="sell-category-list">
+          <div className="sell-category-list" id="projects">
             {categories.map((category) => (
               <button
                 key={category}

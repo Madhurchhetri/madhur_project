@@ -8,8 +8,8 @@ const navLinks = [
   "Home",
   "About",
   "Services",
-  "Projects",
   "Testimonial",
+  "Projects",
 ];
 
 const Navbar = () => {
@@ -23,16 +23,11 @@ const Navbar = () => {
       const currentScrollY = window.scrollY;
       const difference = currentScrollY - lastScrollY.current;
 
-      // Always show navbar at the top
       if (currentScrollY < 80) {
         setNavbarVisible(true);
-      }
-      // Scrolling down: hide navbar
-      else if (difference > 5) {
+      } else if (difference > 5) {
         setNavbarVisible(false);
-      }
-      // Scrolling up: show navbar
-      else if (difference < -5) {
+      } else if (difference < -5) {
         setNavbarVisible(true);
       }
 
@@ -48,12 +43,34 @@ const Navbar = () => {
     };
   }, []);
 
-  // Keep navbar visible while mobile menu is open
   useEffect(() => {
     if (menuOpen) {
       setNavbarVisible(true);
     }
   }, [menuOpen]);
+
+  // Smooth scroll using Lenis
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+
+    const target = document.querySelector(targetId);
+
+    if (!target) return;
+
+    if (window.lenis) {
+      window.lenis.scrollTo(target, {
+        offset: -82,
+        duration: 1.5,
+      });
+    } else {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    setMenuOpen(false);
+  };
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -71,21 +88,37 @@ const Navbar = () => {
       <div className="navbar-container">
 
         {/* LOGO */}
-        <a href="#home" className="brand-logo" onClick={closeMenu}>
+        <a
+          href="#home"
+          className="brand-logo"
+          onClick={(e) => handleNavClick(e, "#home")}
+        >
           <img src={signature} alt="Honey Arora" />
         </a>
 
         {/* DESKTOP NAVIGATION */}
         <nav className="desktop-nav">
-          {navLinks.map((link) => (
-            <a href={`#${link.toLowerCase()}`} key={link}>
-              {link}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const targetId = `#${link.toLowerCase()}`;
+
+            return (
+              <a
+                href={targetId}
+                key={link}
+                onClick={(e) => handleNavClick(e, targetId)}
+              >
+                {link}
+              </a>
+            );
+          })}
         </nav>
 
         {/* DESKTOP CONTACT */}
-        <a href="#contact" className="contact-btn">
+        <a
+          href="#contact"
+          className="contact-btn"
+          onClick={(e) => handleNavClick(e, "#contact")}
+        >
           CONTACT
         </a>
 
@@ -111,27 +144,31 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            {navLinks.map((link, index) => (
-              <motion.a
-                href={`#${link.toLowerCase()}`}
-                key={link}
-                onClick={closeMenu}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: index * 0.06,
-                }}
-              >
-                <span>{link}</span>
-                <span className="mobile-link-arrow">↗</span>
-              </motion.a>
-            ))}
+            {navLinks.map((link, index) => {
+              const targetId = `#${link.toLowerCase()}`;
+
+              return (
+                <motion.a
+                  href={targetId}
+                  key={link}
+                  onClick={(e) => handleNavClick(e, targetId)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: index * 0.06,
+                  }}
+                >
+                  <span>{link}</span>
+                  <span className="mobile-link-arrow">↗</span>
+                </motion.a>
+              );
+            })}
 
             <motion.a
               href="#contact"
               className="mobile-contact"
-              onClick={closeMenu}
+              onClick={(e) => handleNavClick(e, "#contact")}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{

@@ -14,6 +14,9 @@ const useSmoothScroll = () => {
       wheelMultiplier: 1,
     });
 
+    // Make Lenis accessible inside Navbar
+    window.lenis = lenis;
+
     lenis.on("scroll", ScrollTrigger.update);
 
     const update = (time) => {
@@ -26,6 +29,8 @@ const useSmoothScroll = () => {
     return () => {
       gsap.ticker.remove(update);
       lenis.destroy();
+
+      window.lenis = null;
     };
   }, []);
 };
