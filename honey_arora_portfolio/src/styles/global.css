@@ -16,6 +16,7 @@
 
 html {
   scroll-behavior: auto;
+  scroll-padding-top: 82px;
 }
 
 body {
@@ -32,4 +33,10 @@ a {
 ::selection {
   background: var(--brand-pink);
   color: white;
+}
+
+@media (max-width: 900px) {
+  html {
+    scroll-padding-top: 75px;
+  }
 }

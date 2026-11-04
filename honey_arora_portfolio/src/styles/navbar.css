@@ -1,6 +1,12 @@
+
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
   width: 100%;
   height: 82px;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -11,30 +17,17 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
-  /* Bottom shadow */
   box-shadow:
-  inset 0 -25px 25px -18px rgba(220, 0, 85, 0.9),
+    inset 0 -25px 25px -18px rgba(220, 0, 85, 0.9),
     inset 0 -25px 35px -25px rgba(150, 0, 65, 0.8);
-  overflow: visible;
+
   border-bottom: none;
+  will-change: transform;
 }
 
-/* Pink glow */
-/* .navbar::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -18px;
-
-  width: 100%;
-  height: 35px;
-
-  background: rgba(201, 0, 80, 0.35);
-
-  filter: blur(20px);
-  pointer-events: none;
-  z-index: -1;
-} */
+/* =========================
+   NAVBAR CONTAINER
+========================= */
 
 .navbar-container {
   width: 100%;
@@ -47,12 +40,26 @@
   gap: 30px;
 }
 
+/* =========================
+   LOGO
+========================= */
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .brand-logo img {
   width: 180px;
   height: auto;
   display: block;
   object-fit: contain;
 }
+
+/* =========================
+   DESKTOP NAV
+========================= */
 
 .desktop-nav {
   display: flex;
@@ -61,37 +68,138 @@
 }
 
 .desktop-nav a {
+  position: relative;
+
   color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
   text-transform: uppercase;
+  text-decoration: none;
   white-space: nowrap;
+
   transition: color 0.3s ease;
+}
+
+.desktop-nav a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: #c90050;
+
+  transition: width 0.3s ease;
 }
 
 .desktop-nav a:hover {
   color: #ed075b;
 }
 
+.desktop-nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   CONTACT BUTTON
+========================= */
+
 .contact-btn {
+  flex-shrink: 0;
+
   background: #c90050;
   color: #fff;
-  padding: 15px 23px;
 
-  font-size: 18px;
+  padding: 14px 23px;
+
+  font-size: 14px;
   font-weight: 800;
-  text-transform: uppercase;
+  letter-spacing: 1px;
 
-  transition: background 0.3s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
 }
 
 .contact-btn:hover {
-  background: #ed075b;
+  background: #ffd900;
+  color: #080408;
+  transform: translateY(-2px);
 }
 
-/* Mobile */
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+
+  width: 27px;
+  height: 2px;
+
+  background: #fff;
+
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:first-child {
+  transform: translateY(4.5px) rotate(45deg);
+  background: #c90050;
+}
+
+.menu-toggle.active span:last-child {
+  transform: translateY(-4.5px) rotate(-45deg);
+  background: #c90050;
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+.mobile-nav {
+  display: none;
+}
+
+/* =========================
+   TABLET & MOBILE
+========================= */
+
 @media (max-width: 900px) {
+
+  .navbar {
+    height: 75px;
+  }
+
+  .navbar-container {
+    padding: 0 5%;
+  }
+
+  .brand-logo img {
+    width: 165px;
+  }
+
   .desktop-nav,
   .navbar-container > .contact-btn {
     display: none;
@@ -99,35 +207,115 @@
 
   .menu-toggle {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    background: none;
-    border: none;
-    cursor: pointer;
   }
 
   .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    max-height: calc(100vh - 75px);
+    overflow-y: auto;
+
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    padding: 25px 5%;
-    background: #080408;
+
+    padding: 20px 6% 30px;
+
+    background: rgba(8, 4, 8, 0.98);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-top: 1px solid rgba(201, 0, 80, 0.25);
+
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
   }
 
-  .mobile-nav a {
+  .mobile-nav > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 17px 0;
+
     color: #fff;
+
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
+    letter-spacing: 1px;
+
     text-transform: uppercase;
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition: color 0.3s ease;
+  }
+
+  .mobile-nav > a:hover {
+    color: #ed075b;
+  }
+
+  .mobile-link-arrow {
+    color: #c90050;
+    font-size: 18px;
+  }
+
+  .mobile-nav .mobile-contact {
+    justify-content: center;
+    gap: 15px;
+
+    margin-top: 22px;
+    padding: 16px;
+
+    background: #c90050;
+    color: #fff;
+
+    border: none;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .mobile-nav .mobile-contact:hover {
+    background: #ffd900;
+    color: #080408;
   }
 }
 
+/* =========================
+   SMALL MOBILE
+========================= */
+
 @media (max-width: 480px) {
+
   .navbar {
     height: 72px;
   }
 
+  .navbar-container {
+    padding: 0 5%;
+  }
+
   .brand-logo img {
     width: 145px;
+  }
+
+  .mobile-nav {
+    max-height: calc(100vh - 72px);
+    padding: 15px 6% 25px;
+  }
+
+  .mobile-nav > a {
+    padding: 15px 0;
+    font-size: 14px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
   }
 }

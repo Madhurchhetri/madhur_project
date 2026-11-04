@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import "../styles/Testimonials.css";
+import AnimatedText from "./AnimatedText";
 
 const testimonials = [
   {
@@ -42,20 +43,33 @@ const Testimonials = () => {
 
         {/* SECTION HEADING */}
         <div className="testimonials-header">
+
           <span className="testimonials-label">
             CLIENT STORIES
           </span>
 
-          <h2 className="testimonials-heading">
+          {/* CHARACTER-BY-CHARACTER HEADING */}
+          <AnimatedText
+            as="h2"
+            className="testimonials-heading"
+            stagger={0.025}
+          >
             Trust built on
             <br />
-            <strong>real experiences.</strong>
-          </h2>
 
-          <p className="testimonials-intro">
-            Every successful property journey begins with
-            trust. Here's what my clients have to say.
-          </p>
+            <strong className="testimonials-heading-highlight">
+              real experiences.
+            </strong>
+          </AnimatedText>
+
+          {/* CHARACTER-BY-CHARACTER INTRO */}
+          <AnimatedText
+            as="p"
+            className="testimonials-intro"
+            stagger={0.012}
+            text="Every successful property journey begins with trust. Here's what my clients have to say."
+          />
+
         </div>
 
         {/* TESTIMONIAL CARDS */}
@@ -96,6 +110,7 @@ const Testimonials = () => {
                 aria-expanded={isActive}
                 aria-label={`Read testimonial from ${testimonial.name}`}
               >
+
                 {/* IMAGE */}
                 <img
                   src={testimonial.image}
@@ -119,24 +134,29 @@ const Testimonials = () => {
 
                 {/* BOTTOM CONTENT */}
                 <div className="testimonial-bottom">
+
                   <div className="testimonial-person">
                     <h3>{testimonial.name}</h3>
                     <span>{testimonial.role}</span>
                   </div>
 
                   <div className="testimonial-expand">
+
                     <p className="testimonial-quote">
                       {testimonial.quote}
                     </p>
 
                     <div className="testimonial-footer">
                       <span>CLIENT EXPERIENCE</span>
+
                       <span className="testimonial-arrow">
                         ↗
                       </span>
                     </div>
+
                   </div>
                 </div>
+
               </article>
             );
           })}

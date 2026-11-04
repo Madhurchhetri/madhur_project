@@ -9,6 +9,7 @@ import ParallaxSection from "./components/ParallaxSection";
 import Testimonials from "./components/Testimonials";
 import CompanySection from "./components/CompanySection";
 import WhatWeSell from "./components/WhatWeSell";
+import SocialMedia from "./components/SocialMedia";
 
 function App() {
   useSmoothScroll();
@@ -28,6 +29,7 @@ function App() {
         <Testimonials/>
         <CompanySection/>
         <WhatWeSell/>
+        <SocialMedia/>
         <section id="services" style={{ minHeight: "100vh", background: "#080408" }} />
         <section id="references" style={{ minHeight: "100vh", background: "#39001f" }} />
         <section id="about" style={{ minHeight: "100vh", background: "#080408" }} />
