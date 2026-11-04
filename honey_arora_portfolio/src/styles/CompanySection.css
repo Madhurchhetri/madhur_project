@@ -130,14 +130,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background:
-    radial-gradient(
-      ellipse at 100% 0%,
-      rgba(105, 0, 38, 0.3),
-      transparent 50%
-    ),
-    #080408;
+    background: #ffffff;
+    color: #080408;
 
   clip-path: circle(0px at 100% 0%);
   will-change: clip-path;
@@ -206,9 +200,11 @@
 
 /* RIGHT CONTENT */
 
+
 .company-content {
   position: relative;
   max-width: 650px;
+  color: #080408;
 }
 
 .company-label {
@@ -216,29 +212,76 @@
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 4px;
-  color: #e60062;
-  margin-bottom: 20px;
+  color: #c90050;
+  margin-bottom: 25px;
 }
 
-.company-content h2 {
+.company-content h2{
+  font-size: clamp(48px, 5.5vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* TITLE + YELLOW BACKGROUND */
+
+
+.company-title-wrap {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  isolation: isolate;
+  margin-bottom: 30px;
+}
+
+.company-yellow-bg {
+  position: absolute;
+  left: 0;
+  top: 5%;
+  width: 100%;
+  height: 90%;
+  background: #ffd900;
+  transform: scaleX(0);
+  transform-origin: left center;
+  z-index: -1;
+  pointer-events: none;
+  will-change: transform;
+  clip-path: polygon(
+    0 5%,
+    98% 0,
+    100% 92%,
+    2% 100%
+  );
+}
+
+.company-title-wrap  strong{
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 0;
+  padding: 0 5px;
   font-size: clamp(40px, 4.7vw, 72px);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -3px;
-  margin: 0 0 25px;
+  color: #080408;
+  white-space: nowrap;
 }
 
-.company-content h2 strong {
+.company-title-wrap  strong {
+  color: #080408;
   font-weight: 900;
-  color: #c90050;
 }
+
 
 .company-content p {
   font-size: 13px;
   font-weight: 400;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.75);
-  margin: 0 0 14px;
+  line-height: 1.9;
+  color: #555;
+  margin: 0 0 18px;
 }
 
 /* BUTTON */
@@ -263,15 +306,13 @@
   transition: 0.3s ease;
 }
 
-.company-button span {
-  font-size: 20px;
-}
-
 .company-button:hover {
   background: #ffd900;
   color: #080408;
   transform: translateY(-4px);
 }
+
+
 
 /* =========================
    TABLET
@@ -292,14 +333,37 @@
     min-height: 320px;
   }
 
-  .company-content h2 {
+  .company-content {
+    max-width: 100%;
+  }
+
+  .company-label {
+    font-size: 11px;
+  }
+  .company-content h2{
+    font-size: clamp(42px, 5.5vw, 62px);
+  }
+
+  .company-title-wrap {
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 22px;
+  }
+
+  .company-title-wrap strong {
     font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.05;
     letter-spacing: -2px;
   }
 
   .company-content p {
     font-size: 12px;
     line-height: 1.7;
+    color: #555;
+  }
+
+  .company-button {
+    margin-top: 12px;
   }
 }
 
@@ -329,9 +393,12 @@
   .company-story {
     padding: 85px 6% 25px;
     align-items: center;
+    background: #fff;
+    color: #080408;
   }
 
   .company-story-container {
+    width: 100%;
     grid-template-columns: 1fr;
     gap: 18px;
     max-height: calc(100vh - 110px);
@@ -339,6 +406,7 @@
   }
 
   .company-image {
+    width: 100%;
     height: 29vh;
     min-height: 170px;
     max-height: 260px;
@@ -354,39 +422,76 @@
   }
 
   .company-content {
+    width: 100%;
     max-width: 100%;
+    color: #080408;
   }
 
   .company-label {
+    display: block;
     font-size: 10px;
     margin-bottom: 10px;
+    color: #c90050;
   }
 
-  .company-content h2 {
+  .company-content h2{
+    font-size: clamp(34px, 8vw, 48px);
+  }
+
+  .company-title-wrap {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 15px;
+    isolation: isolate;
+  }
+
+  .company-yellow-bg {
+    position: absolute;
+    inset: 0;
+    background: #ffd900;
+    transform-origin: left center;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .company-title-wrap strong {
+    position: relative;
+    z-index: 1;
     font-size: clamp(30px, 8vw, 45px);
     line-height: 1;
     letter-spacing: -1.5px;
-    margin-bottom: 12px;
+    margin: 0;
+    color: #080408;
+  }
+
+  .company-title-wrap  strong {
+    color: #c90050;
+    font-weight: 900;
   }
 
   .company-content p {
     font-size: 11px;
     line-height: 1.55;
     margin-bottom: 8px;
+    color: #555;
   }
 
   .company-button {
+    display: inline-flex;
     padding: 11px 16px;
     margin-top: 5px;
     font-size: 9px;
   }
 }
 
-/* SMALL MOBILE */
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media (max-width: 480px) {
   .company-story {
-    padding-top: 78px;
+    padding: 78px 6% 20px;
   }
 
   .company-story-container {
@@ -397,14 +502,32 @@
   .company-image {
     height: 25vh;
     min-height: 145px;
+    max-height: 220px;
   }
 
-  .company-content h2 {
-    font-size: 32px;
+  .company-content h2{
+     font-size: 36px;
   }
+
+  .company-title-wrap {
+    margin-bottom: 12px;
+  }
+
+  .company-title-wrap strong {
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -1.5px;
+  }
+
 
   .company-content p {
     font-size: 10px;
     line-height: 1.5;
+    margin-bottom: 7px;
+  }
+
+  .company-button {
+    padding: 10px 14px;
+    font-size: 9px;
   }
 }

@@ -78,7 +78,7 @@ const About = () => {
         <div className="about-content">
           <div className="about-title-wrap">
             <h2 ref={titleRef}>
-              <span className="about-pink-text">MORE THAN </span> 
+              <span className="about-pink-text"> MORE THAN </span> 
               
               JUST A
               
