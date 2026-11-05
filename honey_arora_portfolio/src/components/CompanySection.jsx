@@ -3,6 +3,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/CompanySection.css";
+import NormalButton from "./NormalButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -206,11 +207,8 @@ const CompanySection = () => {
               commitment to transparency, we aim to make every property journey
               confident, seamless, and rewarding.
             </p>
-
-            <a href="#achievements" className="company-button">
-              DISCOVER MORE
-              <span>↗</span>
-            </a>
+            <NormalButton href="#achievements"> DISCOVER MORE</NormalButton>
+           
           </div>
 
         </div>

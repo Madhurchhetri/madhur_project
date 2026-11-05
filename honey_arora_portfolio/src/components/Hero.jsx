@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/hero.css";
+import CTAButton from "./CTAButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,10 +81,9 @@ const Hero = () => {
           </p>
 
           <div className="hero-actions">
-            <a href="#contact" className="hero-btn">
-              LET'S TALK <span>↗</span>
-            </a>
-
+          <CTAButton>
+            lets Talk
+          </CTAButton>
             <a href="#services" className="hero-link">
               Explore Services <span>→</span>
             </a>

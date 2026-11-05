@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/About.css";
+import NormalButton from "./NormalButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,11 +108,8 @@ const About = () => {
               personalised approach, I make every real estate journey simple and
               meaningful.
             </p>
-
-            <a href="#achievements" className="about-button">
-              EXPLORE ACHIEVEMENTS
-              <span>↗</span>
-            </a>
+            <NormalButton href="#achievements">EXPLORE ACHIEVEMENTS</NormalButton>
+           
           </div>
         </div>
       </div>
