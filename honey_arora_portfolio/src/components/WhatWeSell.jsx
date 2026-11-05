@@ -1,6 +1,7 @@
 
-import { useState } from "react";
+import { useState , useLayoutEffect } from "react";
 import "../styles/WhatWeSell.css";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const categories = [
   "All",
@@ -86,6 +87,14 @@ const WhatWeSell = () => {
       : projects.filter(
           (project) => project.category === activeCategory
         );
+
+        useLayoutEffect(() => {
+  const timeout = setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 100);
+
+  return () => clearTimeout(timeout);
+}, [activeCategory, selectedProject]);
 
   const handleCategory = (category) => {
     setActiveCategory(category);

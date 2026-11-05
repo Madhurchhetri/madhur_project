@@ -42,7 +42,7 @@ const Hero = () => {
           trigger: ".hero",
           start: "top top",
           end: "bottom top",
-          scrub: 1,
+          scrub: 2,
         },
       });
     }, heroRef);
@@ -54,56 +54,51 @@ const Hero = () => {
     <section className="hero" id="home" ref={heroRef}>
       <div className="hero-container">
         <div className="hero-content">
-          <motion.span
-            className="hero-tag"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            CREATIVE DESIGN & DIGITAL EXPERIENCE
-          </motion.span>
+          <span className="hero-tag">
+            <span>5-STAR REAL ESTATE ADVISOR</span>
+          </span>
 
           <h1>
-            Create Your
-            <br />
-            <span>Digital Identity.</span>
+            HONEY
+            <span>ARORA</span>
           </h1>
 
           <h2>
-            Ideas that inspire.
+            Your Trusted Partner
             <br />
-            Designs that make an impact.
+            in Luxury Real Estate.
           </h2>
 
           <p>
-            We build powerful digital experiences that help brands stand out and
-            connect with the right audience.
+            Experience exceptional real estate advisory with Honey Arora.
+            Specialising in premium properties from DAMAC and Emaar, delivering
+            the right opportunities, trusted guidance, and a seamless property
+            buying experience in Dubai.
           </p>
 
           <div className="hero-actions">
-          <CTAButton>
-            lets Talk
-          </CTAButton>
+            <CTAButton>LET'S TALK</CTAButton>
+
             <a href="#services" className="hero-link">
-              Explore Services <span>→</span>
+              Explore Properties <span>→</span>
             </a>
           </div>
 
           <div className="hero-trust">
-            <span>CREATIVITY</span>
+            <span>YOUR PROPERTY. YOUR FUTURE.</span>
             <span className="trust-star">★★★★★</span>
-            <span>DESIGN · STRATEGY · INNOVATION</span>
+            <span>DAMAC · EMAAR · LUXURY REAL ESTATE</span>
           </div>
         </div>
 
         <div className="hero-visual">
           <motion.img
             src="https://static.berqwp.com/www.moritzdunkel.de/mw1920-q70-webp/https://www.moritzdunkel.de/wp-content/uploads/2026/05/bester-webdesigner-deutschland.webp"
-            alt="Honey Arora"
+            alt="Honey Arora - Real Estate Advisor"
             className="hero-person"
             whileHover={{
-              scale: 0.92,
-              x: 35,
+              scale: 0.97,
+              x: 12,
             }}
             transition={{
               duration: 0.5,
@@ -118,11 +113,11 @@ const Hero = () => {
                   <path
                     id="circle-text-path"
                     d="
-            M 90,90
-            m -63,0
-            a 63,63 0 1,1 126,0
-            a 63,63 0 1,1 -126,0
-          "
+                      M 90,90
+                      m -63,0
+                      a 63,63 0 1,1 126,0
+                      a 63,63 0 1,1 -126,0
+                    "
                   />
                 </defs>
 
