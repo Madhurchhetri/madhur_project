@@ -6,9 +6,9 @@ import CTAButton from "./CTAButton";
 const navigationLinks = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
-  { label: "References", href: "#references" },
+  { label: "Projects", href: "#projects" },
   { label: "About", href: "#about" },
-  { label: "Resources", href: "#resources" },
+  // { label: "Resources", href: "#resources" },
   { label: "Contact", href: "#contact" },
 ];
 

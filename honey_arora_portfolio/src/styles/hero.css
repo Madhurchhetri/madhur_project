@@ -44,17 +44,6 @@
   padding-bottom: 35px;
 }
 
-/* .hero-tag {
-  display:inline-flex;
-  align-items: center;
-  visibility: visible;
-  opacity: 1;
-  font-size: 12px;
-  letter-spacing: 3px;
-  font-weight: 700;
-  margin-bottom: 28px;
-} */
-
 .hero-tag {
   display: inline-flex;
   align-items: center;
@@ -154,6 +143,10 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+
+  /* 3D perspective for Motion hover */
+  perspective: 1500px;
+  /* transform-style: preserve-3d; */
 }
 
 .hero-person {
@@ -164,12 +157,17 @@
   object-position: bottom;
   position: relative;
   z-index: 1;
+
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+
   transform-origin: center bottom;
-  cursor: pointer;
-  will-change: transform;
-  scale: 1.10;
+  transform-style: preserve-3d;
+
   
+  will-change: transform;
+cursor: default;
+  /* Default image size */
+  scale: 1.10;
 }
 
 /* HERO BADGE */
@@ -208,7 +206,7 @@
 .badge-text-svg text {
   fill: #080408;
   font-family: "Poppins", sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 900;
   letter-spacing: 1px;
 }
@@ -339,6 +337,8 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+
+    perspective: 1000px;
   }
 
   .hero-person {
@@ -349,6 +349,7 @@
     height: auto;
     object-fit: contain;
     object-position: bottom;
+
     scale: 1;
   }
 

@@ -1,5 +1,6 @@
+
 import { useEffect, useRef } from "react";
-import { motion } from "motion/react";
+import { motion , useScroll, useTransform  } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/hero.css";
@@ -10,6 +11,13 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const heroRef = useRef(null);
 
+  const { scrollYProgress } = useScroll({
+  target: heroRef,
+  offset: ["start start", "end start"],
+});
+
+const personY = useTransform(scrollYProgress, [0, 1], [0, -18]);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -18,33 +26,29 @@ const Hero = () => {
         },
       });
 
-      tl.from(".hero-content > *", {
-        y: 45,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.15,
-      });
-
+      // HERO CONTENT
       tl.from(
-        ".hero-person",
+        ".hero-content > *",
         {
-          x: 80,
+          y: 45,
           opacity: 0,
-          duration: 1.2,
+          duration: 0.9,
+          stagger: 0.15,
         },
-        "-=0.7",
+        0
       );
 
-      gsap.to(".hero-person", {
-        y: -18,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: 2,
-        },
-      });
+      // SCROLL ANIMATION
+      // gsap.to(".hero-person", {
+      //   y: -18,
+      //   ease: "none",
+      //   scrollTrigger: {
+      //     trigger: ".hero",
+      //     start: "top top",
+      //     end: "bottom top",
+      //     scrub: 2,
+      //   },
+      // });
     }, heroRef);
 
     return () => ctx.revert();
@@ -96,13 +100,21 @@ const Hero = () => {
             src="https://static.berqwp.com/www.moritzdunkel.de/mw1920-q70-webp/https://www.moritzdunkel.de/wp-content/uploads/2026/05/bester-webdesigner-deutschland.webp"
             alt="Honey Arora - Real Estate Advisor"
             className="hero-person"
+            style={{
+    y: personY,
+    transformPerspective: 1200,
+  }}
+            initial={false}
             whileHover={{
-              scale: 0.97,
-              x: 12,
+              z: -35,
+              rotateY: -2,
+              
             }}
             transition={{
-              duration: 0.5,
-              ease: "easeInOut",
+              type: "spring",
+              stiffness: 35,
+              damping: 22,
+              mass: 1,
             }}
           />
 
@@ -123,7 +135,7 @@ const Hero = () => {
 
                 <text>
                   <textPath href="#circle-text-path" startOffset="0%">
-                    HONEY ARORA ✦ HONEY ARORA ✦
+                    HONEY ARORA ✦ 5-STAR REAL ESTATE ADVISOR ✦
                   </textPath>
                 </text>
               </svg>
