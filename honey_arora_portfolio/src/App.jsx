@@ -11,6 +11,7 @@ import CompanySection from "./components/CompanySection";
 import WhatWeSell from "./components/WhatWeSell";
 import SocialMedia from "./components/SocialMedia";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   useSmoothScroll();
@@ -32,12 +33,8 @@ function App() {
         <WhatWeSell/>
         <SocialMedia/>
         <Contact/>
-        {/* <section id="services" style={{ minHeight: "100vh", background: "#080408" }} />
-        <section id="references" style={{ minHeight: "100vh", background: "#39001f" }} />
-        <section id="about" style={{ minHeight: "100vh", background: "#080408" }} />
-        <section id="resources" style={{ minHeight: "100vh", background: "#39001f" }} />
-        <section id="contact" style={{ minHeight: "100vh", background: "#080408" }} /> */}
       </main>
+      <Footer/>
     </>
   );
 }

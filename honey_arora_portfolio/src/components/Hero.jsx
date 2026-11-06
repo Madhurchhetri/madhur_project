@@ -60,7 +60,7 @@ const Hero = () => {
 
           <h1>
             HONEY
-            <span>ARORA</span>
+            <span>ARORA.</span>
           </h1>
 
           <h2>
