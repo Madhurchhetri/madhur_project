@@ -4,7 +4,7 @@ import "../styles/Achievements.css";
 const achievements = [
   {
     id: 1,
-    title: "T Azizi Brokers Awards 2026",
+    title: "Azizi Brokers Awards 2026",
     category: "Best Broker",
     year: "2024",
     description:
