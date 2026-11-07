@@ -4,58 +4,50 @@ import "../styles/Achievements.css";
 const achievements = [
   {
     id: 1,
-    title: "TOP REAL ESTATE PERFORMER",
-    category: "PROFESSIONAL EXCELLENCE",
+    title: "T Azizi Brokers Awards 2026",
+    category: "Best Broker",
     year: "2024",
     description:
-      "Recognised for outstanding performance and dedication in the luxury real estate industry.",
-    image: "/achievements/achievement-1.jpg",
+      " Proud to be recognised with the Broker Award by Azizi Developments for our dedication, performance and excellence.",
+    image: "/achievements/achievement-11.jpeg",
   },
   {
     id: 2,
-    title: "EXCELLENCE IN SALES",
-    category: "SALES ACHIEVEMENT",
+    title: "Azizi Brokers Briefing",
+    category: "Brokers Briefing",
     year: "2024",
     description:
-      "Celebrating exceptional sales performance and successful property transactions.",
-    image: "/achievements/achievement-2.jpg",
+      "An insightful Broker Briefing Session with Azizi Developments, exploring new opportunities and upcoming launches.",
+    image: "/achievements/achievement-22.jpeg",
   },
   {
     id: 3,
-    title: "CLIENT TRUST AWARD",
-    category: "CLIENT RELATIONSHIPS",
+    title: "Peacehomes Brokers Meet",
+    category: "Brokers Session",
     year: "2023",
     description:
-      "Recognised for building meaningful relationships and delivering a trusted client experience.",
-    image: "/achievements/achievement-3.jpg",
+      "A productive Broker Briefing Session with Peace Homes, discussing new projects and growth opportunities.",
+    image: "/achievements/achievement-44.jpeg",
   },
   {
     id: 4,
-    title: "PREMIUM PROPERTY EXPERT",
-    category: "REAL ESTATE EXPERTISE",
+    title: " Danube Brokers Session",
+    category: "Brokers session ",
     year: "2023",
     description:
-      "A milestone celebrating expertise in premium residential and luxury properties.",
-    image: "/achievements/achievement-4.jpg",
+      "An insightful Broker Briefing Session with Danube Properties, exploring new launches and investment opportunities.",
+    image: "/achievements/achievement-33.jpeg",
   },
   {
     id: 5,
-    title: "OUTSTANDING CONTRIBUTION",
-    category: "INDUSTRY RECOGNITION",
+    title: " Danube CEO Meet ",
+    category: "CEO Meet",
     year: "2022",
     description:
-      "Recognised for dedication, professional growth and contribution to the real estate sector.",
-    image: "/achievements/achievement-5.jpg",
+      " An exclusive meeting with the CEO of Danube Properties, discussing vision, partnership and future growth.",
+    image: "/achievements/achievement-55.jpeg",
   },
-  {
-    id: 6,
-    title: "MILESTONE ACHIEVEMENT",
-    category: "CAREER HIGHLIGHT",
-    year: "2022",
-    description:
-      "A special milestone reflecting commitment, consistency and professional success.",
-    image: "/achievements/achievement-6.jpg",
-  },
+ 
 ];
 
 const AchievementCard = ({ item }) => {
@@ -73,7 +65,7 @@ const AchievementCard = ({ item }) => {
         </span>
 
         <div className="achievement-details">
-          <span className="achievement-year">{item.year}</span>
+          {/* <span className="achievement-year">{item.year}</span> */}
 
           <h3>{item.title}</h3>
 

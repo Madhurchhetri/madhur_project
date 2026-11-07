@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import "../styles/CTAButton.css";
 
-const phoneNumber = "+917500423486";
-const whatsappNumber = "917500423486";
+const phoneNumber = "+971585812356";
+const whatsappNumber = "+971585812356";
 
 const whatsappMessage =
   "Hello Sir, I came across your website and really liked your work. I’m interested in discussing a project with you. Could you please share more details about your services? Looking forward to connecting with you. Thank you!";
@@ -118,7 +118,7 @@ const CTAButton = ({ children = "LET'S TALK" }) => {
                       <strong>Give me a call</strong>
                       <small>Let's talk directly</small>
                       <span className="contact-option-number">
-                        +91 75004 23486
+                        +971585812356
                       </span>
                     </span>
 

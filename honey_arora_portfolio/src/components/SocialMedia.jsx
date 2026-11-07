@@ -10,18 +10,18 @@ gsap.registerPlugin(ScrollTrigger);
 const socials = [
   {
     name: "Instagram",
-    handle: "@yourinstagram",
+    handle: "Honey Arora",
     short: "IG",
     description: "Explore our latest updates and lifestyle.",
-    url: "https://www.instagram.com/yourhandle/",
+    url: "https://www.instagram.com/honey.dubaiproperties?xtok=cWczZHd1cW5yM3pp",
     className: "instagram",
   },
   {
-    name: "LinkedIn",
+    name: "TikTok",
     handle: "Honey Arora",
-    short: "in",
+    short: "♪",
     description: "Connect with us professionally.",
-    url: "https://www.linkedin.com/in/yourhandle/",
+    url: "https://www.tiktok.com/@honey_dubaiproperties?_r=1&_t=ZS-9BCcSHSJtoL",
     className: "linkedin",
   },
   {
@@ -29,15 +29,15 @@ const socials = [
     handle: "Honey Arora",
     short: "f",
     description: "Stay connected with our community.",
-    url: "https://www.facebook.com/yourhandle/",
+    url: "https://www.facebook.com/share/1CLepBmrhE/?mibextid=wwXIfr",
     className: "facebook",
   },
   {
     name: "YouTube",
-    handle: "@yourchannel",
+    handle: "Honey Arora",
     short: "▶",
     description: "Watch our property tours and videos.",
-    url: "https://www.youtube.com/@yourchannel",
+    url: "https://youtube.com/@honey_dubaiproperties?si=djpwgvcNgQFVkO_l",
     className: "youtube",
   },
 ];

@@ -5,11 +5,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const categories = [
   "All",
-  "Bhivgati",
-  "Emaar",
-  "Soha",
-  "Domac",
-  "Ellington",
+  "Imtiaz",
+  "Samana",
+  "Beyond",
+ 
 ];
 
 // Demo projects: replace names, images and descriptions
@@ -17,64 +16,35 @@ const categories = [
 const projects = [
   {
     id: 1,
-    name: "Luxury Residence",
-    category: "Bhivgati",
-    location: "Dubai",
-    type: "Residential",
-    image: "/projects/bhivgati-01.jpg",
+    name: " Kore By Imtiaz ",
+    category: "Imtiaz",
+    location: " DLRC ",
+    type: " sale",
+    image: "/projects/Imtiaz-01.WEBP",
     description:
-      "A thoughtfully designed residential destination combining contemporary architecture, premium interiors and exceptional living.",
+      " Kore by Imtiaz is an inspiring residential project that draws its name from the body's centre of strength and stability, and it is designed entirely around human performance, longevity and healthy living. Far more than a residence with a gym, it brings together personalised training, intelligent fitness technology, nutrition-focused living and advanced recovery experiences, helping residents live with greater energy, balance and focus every day. The collection offers beautifully planned studios, one-bedroom and two-bedroom apartments, each created to support a truly holistic wellness lifestyle..",
   },
   {
     id: 2,
-    name: "Signature Living",
-    category: "Emaar",
-    location: "Dubai",
-    type: "Luxury Apartments",
-    image: "/projects/emaar-01.jpg",
+    name: " Downtown one ",
+    category: "Samana",
+    location: " Jabel Ali Downtown",
+    type: " sale",
+    image: "/projects/samana-01.WEBP",
     description:
-      "Experience refined architecture, beautiful surroundings and a lifestyle designed around comfort and elegance.",
+      "Samana Downtown One stands as a bold architectural statement that bridges the present cityscape with its future horizon. The building’s striking silhouette, articulated details and strong lines convey a confident, contemporary character that distinguishes it from every angle. Balanced proportions and a refined structural rhythm give each residence a sense of purposeful elegance",
   },
   {
     id: 3,
-    name: "Premium Residences",
-    category: "Soha",
-    location: "Dubai",
-    type: "Residential",
-    image: "/projects/soha-01.jpg",
+    name: "Yards Plaza By Beyond",
+    category: "Beyond",
+    location: "City of arabia ",
+    type: " Sale ",
+    image: "/projects/Beyond-01.jpeg",
     description:
-      "A premium property destination with elegant spaces and modern architectural design.",
+      " Arancia Yards Plaza is a premium commercial development set within the green masterplan of City of Arabia, designed as a serene urban sanctuary where architecture and nature exist in perfect harmony. The project comprises four elegant buildings surrounded by landscaped gardens, shaded walkways, and open spaces that create a seamless indoor-outdoor lifestyle. It offers a collection of spacious commercial and reatils shops with generous layouts, abundant natural light, private terraces, and floor-to-ceiling windows, all designed to provide a calm and balanced living experience",
   },
-  {
-    id: 4,
-    name: "Modern Architecture",
-    category: "Domac",
-    location: "Dubai",
-    type: "Residential",
-    image: "/projects/domac-01.jpg",
-    description:
-      "Discover a modern approach to residential living with thoughtfully planned spaces.",
-  },
-  {
-    id: 5,
-    name: "The Grand Collection",
-    category: "Ellington",
-    location: "Dubai",
-    type: "Luxury Living",
-    image: "/projects/ellington-01.jpg",
-    description:
-      "A sophisticated collection of residences focused on design, detail and timeless elegance.",
-  },
-  {
-    id: 6,
-    name: "Urban Collection",
-    category: "Emaar",
-    location: "Dubai",
-    type: "Luxury Apartments",
-    image: "/projects/emaar-02.jpg",
-    description:
-      "Contemporary residences offering an elevated urban lifestyle.",
-  },
+  
 ];
 
 const WhatWeSell = () => {

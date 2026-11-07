@@ -1,5 +1,9 @@
+
 import { useLayoutEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,7 +11,6 @@ import { ToastContainer, toast } from "react-toastify";
 import CTAButton from "./CTAButton";
 import "../styles/Contact.css";
 import "react-toastify/dist/ReactToastify.css";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,68 +26,60 @@ const Contact = () => {
 
   const [isSending, setIsSending] = useState(false);
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const leftElements = [
+        ".contact-eyebrow",
+        ".contact-heading",
+        ".contact-description",
+        ".contact-direct",
+      ];
 
-
-useLayoutEffect(() => {
-  const ctx = gsap.context(() => {
-    const leftElements = [
-      ".contact-eyebrow",
-      ".contact-heading",
-      ".contact-description",
-      ".contact-direct",
-    ];
-
-    // Left content: subtle reveal
-    gsap.fromTo(
-      leftElements,
-      {
-        opacity: 0,
-        y: 18,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.06,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-          end: "top 25%",
-          scrub: 0.5,
+      gsap.fromTo(
+        leftElements,
+        {
+          opacity: 0,
+          y: 18,
         },
-      }
-    );
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.06,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            end: "top 25%",
+            scrub: 0.5,
+          },
+        }
+      );
 
-    // Form: same-time reveal, less movement
-    gsap.fromTo(
-      ".contact-form-card",
-      {
-        opacity: 0,
-        y: 18,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-          end: "top 25%",
-          scrub: 0.5,
+      gsap.fromTo(
+        ".contact-form-card",
+        {
+          opacity: 0,
+          y: 18,
         },
-      }
-    );
-  }, sectionRef);
+        {
+          opacity: 1,
+          y: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+            end: "top 25%",
+            scrub: 0.5,
+          },
+        }
+      );
+    }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
-
-
+    return () => ctx.revert();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    if (name === "mobile" && !/^\d*$/.test(value)) return;
 
     setFormData((prev) => ({
       ...prev,
@@ -100,8 +95,8 @@ useLayoutEffect(() => {
       return;
     }
 
-    if (!/^[6-9]\d{9}$/.test(formData.mobile)) {
-      toast.error("Please enter a valid 10-digit mobile number.");
+    if (!formData.mobile) {
+      toast.error("Please enter your mobile number.");
       return;
     }
 
@@ -125,7 +120,7 @@ useLayoutEffect(() => {
           phone_number: formData.mobile,
           message: formData.message.trim(),
         },
-        publicKey,
+        publicKey
       );
 
       toast.success("Thank you! Your enquiry has been sent.");
@@ -192,6 +187,7 @@ useLayoutEffect(() => {
           </div>
 
           <h3>Tell us about yourself.</h3>
+
           <p className="contact-form-subtitle">
             Leave your details below. We'll reach out to you.
           </p>
@@ -199,6 +195,7 @@ useLayoutEffect(() => {
           <form ref={formRef} onSubmit={handleSubmit}>
             <div className="contact-field">
               <label htmlFor="contact-name">YOUR NAME</label>
+
               <input
                 id="contact-name"
                 type="text"
@@ -214,21 +211,20 @@ useLayoutEffect(() => {
             <div className="contact-field">
               <label htmlFor="contact-mobile">MOBILE NUMBER</label>
 
-              <div className="contact-phone-input">
-                <span>+91</span>
-                <input
-                  id="contact-mobile"
-                  type="tel"
-                  name="mobile"
-                  placeholder="Enter 10-digit mobile number"
-                  value={formData.mobile}
-                  onChange={handleChange}
-                  inputMode="numeric"
-                  maxLength={10}
-                  required
-                />
-              </div>
+              <PhoneInput
+                international
+                defaultCountry="IN"
+                value={formData.mobile}
+                onChange={(value) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    mobile: value || "",
+                  }))
+                }
+                placeholder="Enter mobile number"
+              />
             </div>
+
             <div className="contact-field">
               <label htmlFor="contact-message">YOUR MESSAGE</label>
 
@@ -237,12 +233,7 @@ useLayoutEffect(() => {
                 name="message"
                 placeholder="Tell us what you're looking for..."
                 value={formData.message}
-                onChange={(e) =>
-                  setFormData((prev) => ({
-                    ...prev,
-                    message: e.target.value,
-                  }))
-                }
+                onChange={handleChange}
                 rows={4}
                 maxLength={1000}
                 required

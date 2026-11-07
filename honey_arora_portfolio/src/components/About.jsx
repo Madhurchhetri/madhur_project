@@ -63,7 +63,7 @@ const About = () => {
         <div className="about-visual">
           <div className="about-image-frame" ref={imageRef}>
             <img
-              src="https://static.berqwp.com/www.moritzdunkel.de/mw1920-q70-webp/https://www.moritzdunkel.de/wp-content/uploads/2026/05/web-design-agentur-koeln.webp"
+              src="/honey-about.jpg"
               alt="Honey Arora"
               className="about-person"
             />

@@ -170,7 +170,7 @@ const CompanySection = () => {
 
           <div className="company-image">
             <img
-              src="/company-image.jpg"
+              src="/company-image.jpeg"
               alt="Luxury real estate property"
             />
 

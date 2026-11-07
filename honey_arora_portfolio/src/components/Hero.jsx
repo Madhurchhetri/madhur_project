@@ -1,6 +1,5 @@
-
 import { useEffect, useRef } from "react";
-import { motion , useScroll, useTransform  } from "motion/react";
+import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/hero.css";
@@ -11,13 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const heroRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-  target: heroRef,
-  offset: ["start start", "end start"],
-});
-
-const personY = useTransform(scrollYProgress, [0, 1], [0, -18]);
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -26,7 +18,6 @@ const personY = useTransform(scrollYProgress, [0, 1], [0, -18]);
         },
       });
 
-      // HERO CONTENT
       tl.from(
         ".hero-content > *",
         {
@@ -37,18 +28,6 @@ const personY = useTransform(scrollYProgress, [0, 1], [0, -18]);
         },
         0
       );
-
-      // SCROLL ANIMATION
-      // gsap.to(".hero-person", {
-      //   y: -18,
-      //   ease: "none",
-      //   scrollTrigger: {
-      //     trigger: ".hero",
-      //     start: "top top",
-      //     end: "bottom top",
-      //     scrub: 2,
-      //   },
-      // });
     }, heroRef);
 
     return () => ctx.revert();
@@ -97,23 +76,18 @@ const personY = useTransform(scrollYProgress, [0, 1], [0, -18]);
 
         <div className="hero-visual">
           <motion.img
-            src="https://static.berqwp.com/www.moritzdunkel.de/mw1920-q70-webp/https://www.moritzdunkel.de/wp-content/uploads/2026/05/bester-webdesigner-deutschland.webp"
+            src="/hh.png"
             alt="Honey Arora - Real Estate Advisor"
             className="hero-person"
-            style={{
-    y: personY,
-    transformPerspective: 1200,
-  }}
             initial={false}
             whileHover={{
-              z: -35,
+              z: -15,
               rotateY: -2,
-              
             }}
             transition={{
               type: "spring",
-              stiffness: 35,
-              damping: 22,
+              stiffness: 45,
+              damping: 25,
               mass: 1,
             }}
           />
