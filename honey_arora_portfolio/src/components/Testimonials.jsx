@@ -194,9 +194,9 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Mark & Sophie Bennett",
+    name: "Sunil Sharma",
     role: "Real Estate Investor",
-    image: "/testimonial-3.jpg",
+    image: "/testimonial-3.jpeg",
     quote:
       "Professional, transparent, and genuinely committed. I appreciated the honest advice and the way every detail was handled with care.",
   },
