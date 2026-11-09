@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import signature from "../assets/signature.png";
+import signature from "../assets/signature3.png";
 import "../styles/navbar.css";
 
 const navLinks = [

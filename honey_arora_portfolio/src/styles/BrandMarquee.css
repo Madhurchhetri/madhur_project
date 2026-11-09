@@ -1,3 +1,6 @@
+
+/* BRAND MARQUEE */
+
 .brand-marquee {
   width: 100%;
   height: 130px;
@@ -8,36 +11,55 @@
   position: relative;
 }
 
+/* MARQUEE TRACK */
+
 .marquee-track {
   display: flex;
   align-items: center;
   width: max-content;
+  flex-shrink: 0;
   animation: marqueeScroll 22s linear infinite;
+  will-change: transform;
 }
+
+/* BRAND ITEM */
 
 .brand-item {
   display: flex;
   align-items: center;
-  gap: 85px;
+  justify-content: center;
+  gap: 65px;
   padding: 0 55px;
+  flex-shrink: 0;
   white-space: nowrap;
 }
 
-.brand-item span:first-child {
-  font-size: 34px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: #171217;
+/* BRAND LOGO */
+
+.brand-logo {
+  width: 180px;
+  height: 65px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
 }
+
+/* BRAND STAR */
 
 .brand-star {
   font-size: 22px;
   color: #c90050;
+  flex-shrink: 0;
 }
+
+/* HOVER */
 
 .brand-marquee:hover .marquee-track {
   animation-play-state: paused;
 }
+
+/* ANIMATION */
 
 @keyframes marqueeScroll {
   from {
@@ -49,7 +71,29 @@
   }
 }
 
-/* Responsive */
+/* LARGE TABLET */
+
+@media (max-width: 1024px) {
+  .brand-marquee {
+    height: 115px;
+  }
+
+  .brand-item {
+    gap: 50px;
+    padding: 0 40px;
+  }
+
+  .brand-logo {
+    width: 155px;
+    height: 58px;
+  }
+
+  .brand-star {
+    font-size: 20px;
+  }
+}
+
+/* MOBILE */
 
 @media (max-width: 768px) {
   .brand-marquee {
@@ -57,15 +101,68 @@
   }
 
   .brand-item {
-    gap: 45px;
-    padding: 0 30px;
+    gap: 35px;
+    padding: 0 28px;
   }
 
-  .brand-item span:first-child {
-    font-size: 25px;
+  .brand-logo {
+    width: 125px;
+    height: 50px;
   }
 
   .brand-star {
     font-size: 17px;
+  }
+
+  .marquee-track {
+    animation-duration: 20s;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+  .brand-marquee {
+    height: 85px;
+  }
+
+  .brand-item {
+    gap: 25px;
+    padding: 0 20px;
+  }
+
+  .brand-logo {
+    width: 105px;
+    height: 42px;
+  }
+
+  .brand-star {
+    font-size: 15px;
+  }
+
+  .marquee-track {
+    animation-duration: 18s;
+  }
+}
+
+/* VERY SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .brand-item {
+    gap: 18px;
+    padding: 0 15px;
+  }
+
+  .brand-logo {
+    width: 90px;
+    height: 38px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
   }
 }

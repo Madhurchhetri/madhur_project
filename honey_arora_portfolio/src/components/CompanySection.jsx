@@ -175,7 +175,7 @@ const CompanySection = () => {
             />
 
             <div className="company-image-caption">
-              <span>HONEY ARORA</span>
+              <span>Grow Properties</span>
               <span>REAL ESTATE PROFESSIONAL</span>
             </div>
           </div>
@@ -183,7 +183,7 @@ const CompanySection = () => {
           <div className="company-content">
             <span className="company-label">OUR COMPANY</span>
             <h2>
-               A vision built on
+               A vision built on trust.
             </h2>
 
             {/* ANIMATED HEADING */}
@@ -191,12 +191,12 @@ const CompanySection = () => {
             
               <div className="company-yellow-bg" />
 
-                <strong>trust & excellence.</strong>
+                <strong>By Grow Properties.</strong>
               
             </div>
 
             <p>
-              At Honey Arora, we believe real estate is more than buying or
+              At Grow Properties, we believe real estate is more than buying or
               selling properties. It is about creating meaningful connections
               and helping people find spaces that reflect their dreams and
               aspirations.
