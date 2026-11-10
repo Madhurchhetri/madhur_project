@@ -63,7 +63,7 @@ const About = () => {
         <div className="about-visual">
           <div className="about-image-frame" ref={imageRef}>
             <img
-              src="/honey-about.jpg"
+              src="/honey_about.jpg"
               alt="Honey Arora"
               className="about-person"
             />
