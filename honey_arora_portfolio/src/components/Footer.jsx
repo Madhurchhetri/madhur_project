@@ -108,13 +108,13 @@ const Footer = () => {
           <h3>GET IN TOUCH</h3>
 
           <span className="footer-contact-label">CALL ME</span>
-          <a href="tel:+971585812356" className="footer-contact-link">
-            +971585812356
+          <a href="tel:+971585911064" className="footer-contact-link">
+            +971585911064
           </a>
 
           <span className="footer-contact-label">WHATSAPP</span>
           <a
-            href="https://wa.me/+971585812356"
+            href="https://wa.me/+971585911064"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-contact-link"

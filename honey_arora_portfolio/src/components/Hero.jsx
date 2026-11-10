@@ -76,7 +76,7 @@ const Hero = () => {
 
         <div className="hero-visual">
           <motion.img
-            src="/hh.png"
+            src="/hhhh.png"
             alt="Honey Arora - Real Estate Advisor"
             className="hero-person"
             initial={false}
